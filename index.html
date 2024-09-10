@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heating and Air Conditioning Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+    }
+
+    /* Full-width container for the green section */
+    .full-width-container {
+      width: 100vw;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* Green section */
+    .container {
+      display: flex;
+      height: 260px;
+      background-color: #314b57;
+      width: 100%;
+      padding: 0 10%;
+      box-sizing: border-box;
+    }
+
+    .inner-content {
+      display: flex;
+      flex: 1;
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    .left-column {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    header {
+      color: white;
+      margin-bottom: 10px;
+      flex-shrink: 0;
+    }
+
+    h1 {
+      font-family: 'Roboto Slab', serif;
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    .content {
+      display: flex;
+      justify-content: space-between;
+      flex-grow: 1;
+      align-items: flex-start;
+    }
+
+    .content-item {
+      flex: 1 1 22%;
+      margin: 0 0px;
+      text-align: center;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      height: 100%;
+    }
+
+    .content-item img {
+      width: 100%;
+      height: 60%;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    .content-item h2 {
+      font-family: 'Roboto Slab', serif;
+      color: white;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      margin-top: 10px;
+      flex-grow: 1;
+    }
+
+    .right-column {
+      flex: 1;
+      height: 100%;
+      display: flex;
+      align-items: stretch;
+    }
+
+    .map {
+      width: 100%;
+      height: 100%;
+    }
+
+    .map img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Second section styles */
+    .service-area-section {
+      background-color: white;
+      padding: 50px 10%;
+      box-sizing: border-box;
+    }
+
+    .service-area-section h2 {
+      color: #ab3c3c;
+      font-family: 'Roboto Slab', serif;
+      font-size: 48px;
+      margin-bottom: 20px;
+      margin-top: 0;
+    }
+
+    .service-content {
+      display: flex;
+      align-items: flex-start;
+      margin-top: 10px;
+    }
+
+    .service-image {
+      width: 23rem;
+      margin-right: 30px;
+      margin-top: 5px;
+    }
+
+    .service-text {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      margin-top: -14px;
+      flex: 1;
+    }
+
+    .service-text p.red-text {
+      color: #ab3c3c;
+      margin-top: 20px;
+    }
+
+    /* Third section styles */
+    .articles-section {
+      padding: 30px 10%;
+      box-sizing: border-box;
+    }
+
+    .articles-section h2 {
+      color: #ab3c3c;
+      font-family: 'Roboto Slab', serif;
+      font-size: 36px;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .article-content {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .article {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 23rem;
+      text-align: left;
+    }
+
+    .article img {
+      width: 23rem;
+      
+      object-fit: cover;
+    }
+
+    .article-text {
+      margin-top: 10px;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #333;
+      flex-grow: 1;
+    }
+
+    .read-more {
+      font-size: 1rem;
+      text-decoration: none;
+      color: #ab3c3c;
+      margin-top: 10px;
+    }
+
+    .read-more:hover,
+    .read-more:active {
+      text-decoration: underline;
+      color: #ab3c3c;
+    }
+/* Media Queries for Responsiveness */
+
+/* Tablet view (iPads, Android tablets) */
+@media (max-width: 1024px) {
+  .container, .service-area-section, .articles-section {
+    padding: 0 2%; /* Reduce padding to 2px on tablet screens */
+  }
+
+    .article {
+    width: 92%; /* Full width for articles */
+    margin-bottom: 10px;
+  }
+
+  .article img {
+    width: 92%; /* Full width images for articles */
+  }
+  }
+
+
+/* Mobile view (phones) */
+@media (max-width: 768px) {
+  body {
+    padding-right: 5px; /* Add right padding of 5px for phones */
+  }
+
+  .container {
+    flex-direction: column; /* Stack columns vertically */
+    height: auto;
+  }
+
+  header {
+    margin-bottom: 20px;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center; /* Center the columns on mobile */
+    margin-bottom: 20px;
+  }
+
+  .content-item {
+    flex: 1 1 100%; /* Full width for each content item */
+    margin-bottom: 15px;
+    max-width: 320px; /* Limit width of content items */
+  }
+
+  .right-column {
+    order: 3; /* Move the map to be last */
+    margin-top: 20px; /* Move map below the images */
+    width: 100%;
+    height: 200px; /* Adjust height for smaller screens */
+  }
+
+  .service-content, .article-content {
+    flex-direction: column;
+  }
+
+  .service-image {
+    width: 100%; /* Full width image for smaller screens */
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .article {
+    width: 100%; /* Full width for articles */
+    margin-bottom: 20px;
+  }
+
+  .article img {
+    width: 100%; /* Full width images for articles */
+  }
+}
+
+/* Smallest screen (iPhone SE, 320px wide) */
+@media (max-width: 480px) {
+  body {
+    padding-right: 0; /* Right padding for small screens */
+  }
+
+  .container {
+    flex-direction: column;
+    height: auto;
+    padding: 0 5%; /* Reduce padding */
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .content-item {
+    flex: 1 1 100%; /* Each image and heading stacked vertically */
+    margin-bottom: 10px;
+    max-width: 320px; /* Limit the width of each content item */
+  }
+
+  .right-column {
+    margin-top: 10px;
+    height: 200px; /* Adjust height for the map */
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Full-width container for the green section -->
+  <div class="full-width-container">
+    <div class="container">
+      <!-- Inner content with padding -->
+      <div class="inner-content">
+        <!-- Left column with header and four images -->
+        <div class="left-column">
+          <header>
+            <h1>HEATING AND AIR CONDITIONING SERVICES</h1>
+          </header>
+
+          <div class="content">
+            <div class="content-item">
+              <img src="images/heating.png" alt="Heating">
+              <h2>Heating</h2>
+            </div>
+            <div class="content-item">
+              <img src="images/cooling.png" alt="Cooling">
+              <h2>Cooling</h2>
+            </div>
+            <div class="content-item">
+              <img src="images/specials.png" alt="Specials">
+              <h2>Specials</h2>
+            </div>
+            <div class="content-item">
+              <img src="images/plumber-arlington-tx.png" alt="For Plumbing">
+              <h2>For Plumbing</h2>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right column for the map -->
+        <div class="right-column">
+          <div class="map">
+            <img src="images/sub_map.jpg" alt="Map">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Second Section: Service Area -->
+  <div class="service-area-section">
+    <h2>OUR SERVICE AREA</h2>
+    <div class="service-content">
+      <img src="images/our-service-area.jpg" alt="Service Area" class="service-image">
+      <div class="service-text">
+        <p>Minuteman Heating & Air serves Fort Worth, Arlington, Aleda, Alvarado and the surrounding areas with first quality services you can rely upon. Our certified technicians have the experience necessary to ensure a professional repair, installation and maintenance of your <strong>heating and air conditioning</strong> system, and the skills needed to ensure the job is done right the first time. You are our first priority, and we are dedicated to your comfort and satisfaction. Contact us today to schedule your service, or a free estimate for a new <strong>HVAC</strong> system for residential or commercial applications.</p>
+        <p class="red-text">Furnace Repair Service Areas<br>
+        Air Conditioning Repair Service Areas</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Third Section: Helpful Heating and Air Articles -->
+  <div class="articles-section">
+    <h2>Helpful Heating and Air Articles</h2>
+    <div class="article-content">
+      <div class="article">
+        <img src="images/Arlington-HVAC-Tips-for-Troubleshooting-Furnaces.jpg" alt="Article 1">
+        <p class="article-text">Before the not-so-cold winter arrived in Arlington this year, we were looking at the importance of heating, ventilation, and air conditioning (HVAC) contractors.</p>
+        <a href="#" class="read-more">Read more</a>
+      </div>
+      <div class="article">
+        <img src="images/Arlington-HVAC-Tips-for-Uneven-Heat.jpg" alt="Article 2">
+        <p class="article-text">Uneven heat. It may be the No. 1 complaint among Arlington homeowners all winter, no matter how cold it is.</p>
+        <a href="#" class="read-more">Read more</a>
+      </div>
+      <div class="article">
+        <img src="images/The-Value-of-Design-and-Right-Sizing-by-Arlington-HVAC-Contractors.jpg" alt="Article 3">
+        <p class="article-text">Fortunately for Arlington homeowners, the winter of 2016 has been, for the most part, warm. There’s still some cold days ahead...</p>
+        <a href="#" class="read-more">Read more</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
