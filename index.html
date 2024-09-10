@@ -97,6 +97,11 @@
       flex-grow: 1;
     }
 
+    a {
+        color: #ab3c3c;
+        text-decoration: none;  
+    }
+
     .right-column {
       flex: 1;
       height: 100%;
@@ -231,7 +236,7 @@
 /* Mobile view (phones) */
 @media (max-width: 768px) {
   body {
-    padding-right: 5px; /* Add right padding of 5px for phones */
+    padding-right: 5px; 
   }
 
   .container {
@@ -282,13 +287,13 @@
 /* Smallest screen (iPhone SE, 320px wide) */
 @media (max-width: 480px) {
   body {
-    padding-right: 0; /* Right padding for small screens */
+    padding-right: 0; 
   }
 
   .container {
     flex-direction: column;
     height: auto;
-    padding: 0 5%; /* Reduce padding */
+    padding: 0 5%; 
   }
 
   .content {
@@ -303,9 +308,14 @@
     max-width: 320px; /* Limit the width of each content item */
   }
 
-  .right-column {
-    margin-top: 10px;
-    height: 200px; /* Adjust height for the map */
+
+  .article {
+    width: 100%; /* Full width for articles */
+    margin-bottom: 20px;
+  }
+
+  .article img {
+    width: 100%; /* Full width images for articles */
   }
 }
 
