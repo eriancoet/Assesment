@@ -27,13 +27,27 @@
       margin: 0;
     }
 
+    .content-frame-top {
+      width: 100%;
+      max-width: 1050px; /* Limit width to 1050px */
+      margin: 0 auto;
+      padding: 0 0px; /* Add padding for small screens */
+    }
+
+    .content-frame {
+      width: 100%;
+      max-width: 1300px; /* Limit width to 1300px */
+      margin: 0 auto;
+      padding: 0 0px;
+    }
+
     /* Green section */
     .container {
       display: flex;
       height: 260px;
       background-color: #314b57;
       width: 100%;
-      padding: 0 10%;
+      padding: 0 0;
       box-sizing: border-box;
     }
 
@@ -98,32 +112,32 @@
     }
 
     a {
-        color: #ab3c3c;
-        text-decoration: none;  
+      color: #ab3c3c;
+      text-decoration: none;  
     }
 
     .right-column {
       flex: 1;
-      height: 100%;
+      height: 260px;
       display: flex;
       align-items: stretch;
     }
 
     .map {
-      width: 100%;
-      height: 100%;
+    
+      height: 260px;
     }
 
     .map img {
       width: 100%;
-      height: 100%;
+      height: 260px;
       object-fit: cover;
     }
 
     /* Second section styles */
     .service-area-section {
       background-color: white;
-      padding: 50px 10%;
+      padding: 20px 10%;
       box-sizing: border-box;
     }
 
@@ -142,7 +156,7 @@
     }
 
     .service-image {
-      width: 23rem;
+      width: 20.5rem;
       margin-right: 30px;
       margin-top: 5px;
     }
@@ -184,13 +198,12 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      width: 23rem;
+      width: 20.5rem;
       text-align: left;
     }
 
     .article img {
-      width: 23rem;
-      
+      width: 20.5rem;
       object-fit: cover;
     }
 
@@ -214,54 +227,80 @@
       text-decoration: underline;
       color: #ab3c3c;
     }
-/* Media Queries for Responsiveness */
 
-/* Tablet view (iPads, Android tablets) */
-@media (max-width: 1024px) {
-  .container, .service-area-section, .articles-section {
-    padding: 0 2%; /* Reduce padding to 2px on tablet screens */
-  }
+    /* Media Queries for Responsiveness */
 
-    .article {
-    width: 92%; /* Full width for articles */
-    margin-bottom: 10px;
-  }
+    /* Desktop view */
+    @media (min-width: 1600px) {
+      .content-frame-top {
+        max-width: 1200px;
+      }
 
-  .article img {
-    width: 92%; /* Full width images for articles */
-  }
-  }
+      .content-frame {
+        max-width: 1400px;
+      }
+    }
+
+    /* Tablet view (iPads, Android tablets) */
+    @media (max-width: 1024px) {
+      .service-area-section, .articles-section {
+        padding: 0 10%;
+      }
+
+      .content-frame-top {
+        padding: 0 15px;
+      }
+
+      .article {
+        width: 100%;
+        margin-bottom: 10px;
+        padding-right: 20px;
+      }
+
+      .article img {
+        width: 100%;
+        padding-right: 20px;
+
+      }
+    }
 
 
-/* Mobile view (phones) */
+    /* Mobile view (phones) */
 @media (max-width: 768px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures no overflow from padding/margins */
+  }
+
   body {
-    padding-right: 5px; 
+    padding-right: 0px;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
   }
 
+  .content-frame-top, .content-frame {
+    padding: 0 20px; /* Adjust padding to fit within the screen */
+  }
   .container {
-    flex-direction: column; /* Stack columns vertically */
+    flex-direction: column;
     height: auto;
+    margin: 0;
+    padding: 0;
   }
-
-  header {
-    margin-bottom: 20px;
-  }
-
   .content {
     flex-direction: column;
-    align-items: center; /* Center the columns on mobile */
+    align-items: center;
     margin-bottom: 20px;
   }
 
   .content-item {
-    flex: 1 1 100%; /* Full width for each content item */
+    flex: 1 1 100%;
     margin-bottom: 15px;
-    max-width: 320px; /* Limit width of content items */
+    max-width: 320px;
   }
 
   .right-column {
-   visibility: hidden;
+    visibility: hidden;
   }
 
   .service-content, .article-content {
@@ -269,31 +308,47 @@
   }
 
   .service-image {
-    width: 100%; /* Full width image for smaller screens */
+    width: 100%;
     margin-right: 0;
     margin-bottom: 20px;
+    padding: 0;
   }
 
   .article {
-    width: 100%; /* Full width for articles */
+    width: 100%;
     margin-bottom: 20px;
+    padding: 0;
   }
 
   .article img {
-    width: 100%; /* Full width images for articles */
+    width: 100%;
+    padding: 0;
+  }
+
+  .service-area-section, .articles-section {
+    padding: 0 20px;
+    box-sizing: border-box;
   }
 }
 
 /* Smallest screen (iPhone SE, 320px wide) */
 @media (max-width: 480px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures no overflow from padding/margins */
+  }
+
   body {
-    padding-right: 0; 
+    padding-right: 0px;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
   }
 
   .container {
     flex-direction: column;
     height: auto;
-    padding: 0 5%; 
+    margin: 0;
+    padding: 0;
   }
 
   .content {
@@ -303,19 +358,25 @@
   }
 
   .content-item {
-    flex: 1 1 100%; /* Each image and heading stacked vertically */
+    flex: 1 1 100%;
     margin-bottom: 10px;
-    max-width: 320px; /* Limit the width of each content item */
+    max-width: 320px;
   }
 
-
   .article {
-    width: 100%; /* Full width for articles */
+    width: 100%;
     margin-bottom: 20px;
+    padding: 0; /* Remove any extra padding */
   }
 
   .article img {
-    width: 100%; /* Full width images for articles */
+    width: 100%;
+    padding: 0; /* Ensure image fits the width */
+  }
+
+  .service-area-section, .articles-section {
+    padding: 0 10px;
+    box-sizing: border-box;
   }
 }
 
@@ -327,74 +388,78 @@
   <div class="full-width-container">
     <div class="container">
       <!-- Inner content with padding -->
-      <div class="inner-content">
-        <!-- Left column with header and four images -->
-        <div class="left-column">
-          <header>
-            <h1>HEATING AND AIR CONDITIONING SERVICES</h1>
-          </header>
+      <div class="content-frame-top">
+        <div class="inner-content">
+          <!-- Left column with header and four images -->
+          <div class="left-column">
+            <header>
+              <h1>HEATING AND AIR CONDITIONING SERVICES</h1>
+            </header>
 
-          <div class="content">
-            <div class="content-item">
-             <a href="#"> <img src="images/heating.png" alt="Heating">
-              <h2>Heating</h2></a>
-            </div>
-            <div class="content-item">
+            <div class="content">
+              <div class="content-item">
+                <a href="#"> <img src="images/heating.png" alt="Heating">
+                <h2>Heating</h2></a>
+              </div>
+              <div class="content-item">
                 <a href="#"> <img src="images/cooling.png" alt="Cooling">
-              <h2>Cooling</h2></a>
-            </div>
-            <div class="content-item">
+                <h2>Cooling</h2></a>
+              </div>
+              <div class="content-item">
                 <a href="#"> <img src="images/specials.png" alt="Specials">
-              <h2>Specials</h2></a>
-            </div>
-            <div class="content-item">
+                <h2>Specials</h2></a>
+              </div>
+              <div class="content-item">
                 <a href="#">  <img src="images/plumber-arlington-tx.png" alt="For Plumbing">
-              <h2>For Plumbing</h2></a>
+                <h2>For Plumbing</h2></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right column for the map -->
+          <div class="right-column">
+            <div class="map">
+              <a href="#">  <img src="images/sub_map.jpg" alt="Map"></a>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
 
-        <!-- Right column for the map -->
-        <div class="right-column">
-          <div class="map">
-            <a href="#">  <img src="images/sub_map.jpg" alt="Map"></a>
-          </div>
+  <div class="content-frame">
+    <!-- Second Section: Service Area -->
+    <div class="service-area-section">
+      <h2>OUR SERVICE AREA</h2>
+      <div class="service-content">
+        <img src="images/our-service-area.jpg" alt="Service Area" class="service-image">
+        <div class="service-text">
+          <p>Minuteman Heating & Air serves Fort Worth, Arlington, Aleda, Alvarado and the surrounding areas with first quality services you can rely upon. Our certified technicians have the experience necessary to ensure a professional repair, installation and maintenance of your <strong>heating and air conditioning</strong> system, and the skills needed to ensure the job is done right the first time. You are our first priority, and we are dedicated to your comfort and satisfaction. Contact us today to schedule your service, or a free estimate for a new <strong>HVAC</strong> system for residential or commercial applications.</p>
+          <p><a href="#" class="red-text">Furnace Repair Service Areas<br>
+          Air Conditioning Repair Service Areas</a></p>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Second Section: Service Area -->
-  <div class="service-area-section">
-    <h2>OUR SERVICE AREA</h2>
-    <div class="service-content">
-      <img src="images/our-service-area.jpg" alt="Service Area" class="service-image">
-      <div class="service-text">
-        <p>Minuteman Heating & Air serves Fort Worth, Arlington, Aleda, Alvarado and the surrounding areas with first quality services you can rely upon. Our certified technicians have the experience necessary to ensure a professional repair, installation and maintenance of your <strong>heating and air conditioning</strong> system, and the skills needed to ensure the job is done right the first time. You are our first priority, and we are dedicated to your comfort and satisfaction. Contact us today to schedule your service, or a free estimate for a new <strong>HVAC</strong> system for residential or commercial applications.</p>
-        <p><a href="#" class="red-text">Furnace Repair Service Areas<br>
-        Air Conditioning Repair Service Areas</a></p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Third Section: Helpful Heating and Air Articles -->
-  <div class="articles-section">
-    <h2>Helpful Heating and Air Articles</h2>
-    <div class="article-content">
-      <div class="article">
-       <a href="#"> <img src="images/Arlington-HVAC-Tips-for-Troubleshooting-Furnaces.jpg" alt="Article 1"></a>
-        <p class="article-text">Before the not-so-cold winter arrived in Arlington this year, we were looking at the importance of heating, ventilation, and air conditioning (HVAC) contractors.</p>
-        <a href="#" class="read-more">Read more</a>
-      </div>
-      <div class="article">
-        <a href="#">  <img src="images/Arlington-HVAC-Tips-for-Uneven-Heat.jpg" alt="Article 2"></a>
-        <p class="article-text">Uneven heat. It may be the No. 1 complaint among Arlington homeowners all winter, no matter how cold it is.</p>
-        <a href="#" class="read-more">Read more</a>
-      </div>
-      <div class="article">
-        <a href="#">  <img src="images/The-Value-of-Design-and-Right-Sizing-by-Arlington-HVAC-Contractors.jpg" alt="Article 3"></a>
-        <p class="article-text">Fortunately for Arlington homeowners, the winter of 2016 has been, for the most part, warm. There’s still some cold days ahead...</p>
-        <a href="#" class="read-more">Read more</a>
+    <!-- Third Section: Helpful Heating and Air Articles -->
+    <div class="articles-section">
+      <h2>Helpful Heating and Air Articles</h2>
+      <div class="article-content">
+        <div class="article">
+          <a href="#"> <img src="images/Arlington-HVAC-Tips-for-Troubleshooting-Furnaces.jpg" alt="Article 1"></a>
+          <p class="article-text">Before the not-so-cold winter arrived in Arlington this year, we were looking at the importance of heating, ventilation, and air conditioning (HVAC) contractors.</p>
+          <a href="#" class="read-more">Read more</a>
+        </div>
+        <div class="article">
+          <a href="#">  <img src="images/Arlington-HVAC-Tips-for-Uneven-Heat.jpg" alt="Article 2"></a>
+          <p class="article-text">Uneven heat. It may be the No. 1 complaint among Arlington homeowners all winter, no matter how cold it is.</p>
+          <a href="#" class="read-more">Read more</a>
+        </div>
+        <div class="article">
+          <a href="#">  <img src="images/The-Value-of-Design-and-Right-Sizing-by-Arlington-HVAC-Contractors.jpg" alt="Article 3"></a>
+          <p class="article-text">Fortunately for Arlington homeowners, the winter of 2016 has been, for the most part, warm. There’s still some cold days ahead...</p>
+          <a href="#" class="read-more">Read more</a>
+        </div>
       </div>
     </div>
   </div>
